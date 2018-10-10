@@ -6,6 +6,9 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './Homepage/homepage/homepage.component';
 
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,9 +16,12 @@ import { HomepageComponent } from './Homepage/homepage/homepage.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    InfiniteScrollModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+platformBrowserDynamic().bootstrapModule(AppModule);

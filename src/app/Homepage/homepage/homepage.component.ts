@@ -47,4 +47,14 @@ export class HomepageComponent implements OnInit {
     this.userModal = this.infoImages[i].user;
   }
 
+  onScroll() {
+    this.imageService.getImage40().subscribe(
+      images => {
+        this.infoImages = images.hits;
+        console.log(this.infoImages);
+        this.onScroll()
+      }
+    )
+  }
+
 }

@@ -8,12 +8,15 @@ import { Observable, throwError } from 'rxjs';
 export class GetImageService {
 
   private imageUrl = 'https://pixabay.com/api/?key=9790155-f60ce239d82231d53d42a71ad&lang=es&per_page=20'
+  private imageUrl40 = 'https://pixabay.com/api/?key=9790155-f60ce239d82231d53d42a71ad&lang=es&per_page=40'
 
   constructor(private http: HttpClient) { }
 
   getImage(): Observable<any> {
     return this.http.get<any>(this.imageUrl)
   }
-
+  getImage40(): Observable<any> {
+    return this.http.get<any>(this.imageUrl40)
+  }
 
 }

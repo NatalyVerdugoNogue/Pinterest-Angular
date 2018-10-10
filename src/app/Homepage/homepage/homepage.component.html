@@ -89,7 +89,8 @@
 
 
 <!-- cards -->
-<div id="cardImg" class="card-columns pt-2 mx-2">
+<div id="cardImg" class="card-columns pt-2 mx-2 search-results" infiniteScroll [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50" (scrolled)="onScroll()">
   <div class="card" *ngFor="let infoImage of infoImages; let i=index">
     <button type="submit" class="btn-img" data-toggle="modal" data-target="#basicModal" (click)="viewModal(i)">
       <img class="card-img p-2" src="{{infoImage.webformatURL}}" alt="Card image">
