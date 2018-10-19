@@ -51,7 +51,6 @@ export class HomepageComponent implements OnInit {
     this.imageService.getImage40().subscribe(
       images => {
         this.infoImages = images.hits;
-        console.log(this.infoImages);
         this.onScroll()
       }
     )
